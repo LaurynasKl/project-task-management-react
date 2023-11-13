@@ -1,0 +1,9 @@
+.main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    align-items: center;
+    min-height: calc(100vh - 9rem);
+    padding: 3rem 2rem 0 2rem;
+}
