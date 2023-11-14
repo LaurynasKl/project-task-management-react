@@ -13,13 +13,13 @@
     display: block;
 }
 
-.aside .aside-bg{
+.asideBg{
     width: 100%;
     height: 100%;
     background-color: #0008;
 }
 
-.aside .aside-container{
+.asideContainer{
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -34,28 +34,28 @@
     box-shadow: -0.5rem 0 0.5rem #0003;
     padding: 2rem;
 }
-.aside .aside-header{
+.asideHeader{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.aside .aside-title{
+.asideTitle{
     font: 2rem;
     line-height: 1em;
     font-weight: normal;
 }
-.aside .fa-times{
+.fa-times{
     background-color: transparent;
     font-size: 2rem;
     border: none;
     color: #777;
     cursor: pointer;
 }
-.aside .fa-times:hover{
+.fa-times:hover{
     color: #333;
 }
 
-.aside .aside-content{
+.asideContent{
     max-height: calc(100vh - 8rem);
     overflow: auto;
 }

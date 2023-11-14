@@ -1,10 +1,10 @@
-import './Header.css'
+import style from './Header.module.css';
 
 export function Header() {
     return (    
-        <header className="main-header">
-            <div className="logo">Task-46</div>
-            <button id="add-task" className="btn">Add task</button>
+        <header className={style.mainHeader}>
+            <div className={style.logo}>Task-46</div>
+            <button id="add-task" className={style.btn}>Add task</button>
         </header>
     );
 }
