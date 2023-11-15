@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import style from './Kanban.module.css'
 import { KanbanColumn } from './KanbanColumn';
 
@@ -6,6 +7,9 @@ import { KanbanColumn } from './KanbanColumn';
 // {/* <h2 className={style.title + " normal underline"}>Backlog</h2>     mix style */}
 
 export function Kanban(){
+    const [title, setTitle] = useState('');
+
+    const columns = ['Backlog', 'Todo'];
     const data = [
         {
             id: 1,
@@ -33,13 +37,24 @@ export function Kanban(){
         },
     ];
     
+    function newColumnSubmit(event){
+        event.preventDefault();
+        columns.push(title)
+        console.log(title, columns);
+    }
+    function inputUpdate(event){
+        setTitle(event.target.value);
+    }
+
     return (
-    <section id="kanban" className={style.todo} 
-        style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
-        <KanbanColumn tasks={data.filter(task => task.columnIndex === 0)} title="Backlog" />
-        <KanbanColumn tasks={data.filter(task => task.columnIndex === 1)} title="Todo" />
-        <KanbanColumn tasks={data.filter(task => task.columnIndex === 2)} title="In progress" />
-        <KanbanColumn tasks={data.filter(task => task.columnIndex === 3)} title="Done" />
+    <section id="kanban" className={style.todo} style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+        {columns.map((column, idx) => (
+            <KanbanColumn tasks={data.filter(task => task.columnIndex === idx)} title={column} />
+        ))}
+        <form className={style.newColumn}>
+            <input type="text" value={title} onChange={inputUpdate} placeholder='Naujas stulpelis' />
+            <button type="submit" onClick={newColumnSubmit}>Prideti</button>
+        </form>
         </section>
     );
 }

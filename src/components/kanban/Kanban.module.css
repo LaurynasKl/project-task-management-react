@@ -5,7 +5,7 @@
     gap: 2rem;
     min-height: calc(100vh - 12rem);
     overflow-y: auto;
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
 }
 
  .column {
@@ -82,9 +82,16 @@ taskDesc {
 .taskDeadline {
 }
 
-/* .asd{
-    background-color: red;
-    position: fixed;
-    inset: 30%;
-    z-index: 1;
-} */
+.newColumn{
+    display: flex;
+    width: 20rem;
+    align-items: self-start;
+}
+.newColumn input{
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+.newColumn button{
+    font-size: 1rem;
+    padding: 0.5rem;
+}
